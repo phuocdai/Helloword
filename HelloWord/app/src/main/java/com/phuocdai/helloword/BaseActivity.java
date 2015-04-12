@@ -1,21 +1,22 @@
 package com.phuocdai.helloword;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.Toast;
 
-
-public class MainActivity extends BaseActivity {
-
+public class BaseActivity extends Activity {
+    Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setupView();
     }
 
-    @Override
+    /**
+     * setup view
+     */
     public void setupView() {
-        super.setupView();
-        setContentView(R.layout.activity_main);
         Toast.makeText(mContext, "hello", Toast.LENGTH_LONG).show();
     }
 }
